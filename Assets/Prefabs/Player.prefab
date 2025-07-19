@@ -123,14 +123,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   horizontalSpeed: 800
   jumpForce: 10
-  distanceCanJump: 0.7
+  distanceCanJump: 0.55
   gravityForce: 800
   maxSpeed: 7
   groundLayer:
     serializedVersion: 2
     m_Bits: 1
+  playerCollider: {fileID: 1421245574942329584}
   rigidBody: {fileID: 7855072791155510523}
   canReverseGravity: 0
+  reverseGravityAirMultiplier: 3
+  raycastMultiplier: 0.9
 --- !u!114 &-6211419758947111792
 MonoBehaviour:
   m_ObjectHideFlags: 0

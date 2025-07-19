@@ -21,6 +21,18 @@ MonoBehaviour:
     m_SerializedLabels:
     - Level02
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 454f023d19ca1254094aed0726ccc425
+    m_Address: Assets/Prefabs/Levels/Level08.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Level08
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 47304132d41eddd4db4404ec2f34f5bc
+    m_Address: Assets/Prefabs/Levels/Level09.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Level09
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 794c477078dd4de49a77b693ae4b1fb1
     m_Address: Assets/Prefabs/Levels/Level05.prefab
     m_ReadOnly: 0

@@ -16,14 +16,34 @@ public class PlayerMovementControl : MonoBehaviour
     [SerializeField]
     private LayerMask groundLayer;
     [SerializeField]
+    private BoxCollider2D playerCollider;
+    [SerializeField]
     private Rigidbody2D rigidBody;
     [SerializeField]
     private bool canReverseGravity;
+    [SerializeField]
+    private float reverseGravityAirMultiplier;
+    [SerializeField]
+    private float raycastMultiplier;
 
     private bool canJump = true;
     private Vector2 movementInput;
     private bool isGravityReversed = false;
     private int jumpGravityMultiplier => isGravityReversed ? -1 : 1;
+    private float halfWidth;
+
+    private enum LastAirButtonPressed
+    {
+        jump,
+        changeGravity
+    }
+    
+    private LastAirButtonPressed lastAirButtonPressed;
+
+    private void Start()
+    {
+        halfWidth = playerCollider.bounds.extents.x * raycastMultiplier;
+    }
 
     private void Update()
     {
@@ -46,6 +66,9 @@ public class PlayerMovementControl : MonoBehaviour
     {
         Vector2 gravityForceApply = new Vector2(0f, -gravityForce * Time.deltaTime * jumpGravityMultiplier);
         
+        if (canReverseGravity && lastAirButtonPressed == LastAirButtonPressed.changeGravity)
+            gravityForceApply *= reverseGravityAirMultiplier;
+        
         rigidBody.AddForce(gravityForceApply);
     }
 
@@ -56,6 +79,7 @@ public class PlayerMovementControl : MonoBehaviour
 
         if (GameInputControl.Instance.GetPlayerReverseGravity() && canJump)
         {
+            lastAirButtonPressed = LastAirButtonPressed.changeGravity;
             isGravityReversed = !isGravityReversed;
             
             rigidBody.gravityScale = jumpGravityMultiplier;
@@ -64,7 +88,15 @@ public class PlayerMovementControl : MonoBehaviour
 
     private void VerifyJump()
     {
-        canJump = Physics2D.Raycast(transform.position, isGravityReversed ? Vector2.up : Vector2.down, distanceCanJump, groundLayer);
+        Vector2 origin = transform.position;
+        Vector2 leftOrigin = origin + Vector2.left * halfWidth;
+        Vector2 rightOrigin = origin + Vector2.right * halfWidth;
+        
+        RaycastHit2D centerHit = Physics2D.Raycast(origin, isGravityReversed ? Vector2.up : Vector2.down, distanceCanJump, groundLayer);
+        RaycastHit2D leftHit = Physics2D.Raycast(leftOrigin, isGravityReversed ? Vector2.up : Vector2.down, distanceCanJump, groundLayer);
+        RaycastHit2D rightHit = Physics2D.Raycast(rightOrigin, isGravityReversed ? Vector2.up : Vector2.down, distanceCanJump, groundLayer);
+        
+        canJump = centerHit.collider != null || leftHit.collider != null || rightHit.collider != null;
     }
 
     private void HandleMovementInput()
@@ -90,6 +122,7 @@ public class PlayerMovementControl : MonoBehaviour
 
         if (GameInputControl.Instance.GetPlayerJump())
         {
+            lastAirButtonPressed = LastAirButtonPressed.jump;
             Vector2 jumpValue = new Vector2(0f, jumpForce * jumpGravityMultiplier);
 
             rigidBody.AddForce(jumpValue, ForceMode2D.Impulse);
@@ -99,16 +132,15 @@ public class PlayerMovementControl : MonoBehaviour
     
     private void OnDrawGizmos()
     {
-        // Cor da linha para visualização
+        Vector2 origin = transform.position;
+        Vector2 leftOrigin = origin + Vector2.left * halfWidth;
+        Vector2 rightOrigin = origin + Vector2.right * halfWidth;
+        
+        Vector2 direction = isGravityReversed ? Vector2.up * distanceCanJump : Vector2.down * distanceCanJump;
+
         Gizmos.color = Color.green;
-
-        // Ponto inicial do raycast
-        Vector3 start = transform.position;
-
-        // Direção e distância
-        Vector3 direction = isGravityReversed ? Vector2.up * distanceCanJump : Vector2.down * distanceCanJump;
-
-        // Desenha a linha representando o Raycast
-        Gizmos.DrawLine(start, start + direction);
+        Gizmos.DrawLine(origin, origin + direction);
+        Gizmos.DrawLine(leftOrigin, leftOrigin + direction);
+        Gizmos.DrawLine(rightOrigin, rightOrigin + direction);
     }
 }

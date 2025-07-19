@@ -35,6 +35,7 @@ UserSettings/
 *.pidb.meta
 *.apk
 *.aab
+*.zip
 
 # IDEs
 .vscode/
