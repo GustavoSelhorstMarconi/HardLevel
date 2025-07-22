@@ -100,4 +100,9 @@ public class LevelControl : MonoBehaviour
     {
         return defaultLevelName + " " + currentLevelIndex.ToString();
     }
+
+    public int GetCurrentLevelIndex()
+    {
+        return currentLevelIndex;
+    }
 }

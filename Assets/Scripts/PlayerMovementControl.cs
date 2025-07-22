@@ -3,6 +3,14 @@ using UnityEngine;
 
 public class PlayerMovementControl : MonoBehaviour
 {
+    [Header("References")]
+    [SerializeField]
+    private LayerMask groundLayer;
+    [SerializeField]
+    private BoxCollider2D playerCollider;
+    [SerializeField]
+    private Rigidbody2D rigidBody;
+    [Header("Movement values")]
     [SerializeField]
     private float horizontalSpeed;
     [SerializeField]
@@ -13,24 +21,23 @@ public class PlayerMovementControl : MonoBehaviour
     private float gravityForce;
     [SerializeField]
     private float maxSpeed;
-    [SerializeField]
-    private LayerMask groundLayer;
-    [SerializeField]
-    private BoxCollider2D playerCollider;
-    [SerializeField]
-    private Rigidbody2D rigidBody;
+    [Header("Configuration")]
     [SerializeField]
     private bool canReverseGravity;
     [SerializeField]
     private float reverseGravityAirMultiplier;
     [SerializeField]
     private float raycastMultiplier;
+    [SerializeField]
+    private bool startReversedMovement;
 
     private bool canJump = true;
     private Vector2 movementInput;
     private bool isGravityReversed = false;
-    private int jumpGravityMultiplier => isGravityReversed ? -1 : 1;
     private float halfWidth;
+    private bool isReversedMovement;
+    private int jumpGravityMultiplier => isGravityReversed ? -1 : 1;
+    private int movementReversedMultiplier => isReversedMovement ?  -1 : 1;
 
     private enum LastAirButtonPressed
     {
@@ -43,6 +50,7 @@ public class PlayerMovementControl : MonoBehaviour
     private void Start()
     {
         halfWidth = playerCollider.bounds.extents.x * raycastMultiplier;
+        isReversedMovement = startReversedMovement;
     }
 
     private void Update()
@@ -52,14 +60,14 @@ public class PlayerMovementControl : MonoBehaviour
         HandleMovementInput();
         HandleJumpInput();
         HandleReverseGravityInput();
-
-        if (!canJump)
-            ApplyGravityForce();
     }
 
     private void FixedUpdate()
     {
         HandleMovement();
+        
+        if (!canJump)
+            ApplyGravityForce();
     }
 
     private void ApplyGravityForce()
@@ -106,7 +114,7 @@ public class PlayerMovementControl : MonoBehaviour
 
     private void HandleMovement()
     {
-        Vector2 movementValue = movementInput * horizontalSpeed * Time.deltaTime;
+        Vector2 movementValue = movementInput * horizontalSpeed * Time.deltaTime * movementReversedMultiplier;
         movementValue.y = 0f;
         
         rigidBody.AddForce(movementValue);
@@ -142,5 +150,10 @@ public class PlayerMovementControl : MonoBehaviour
         Gizmos.DrawLine(origin, origin + direction);
         Gizmos.DrawLine(leftOrigin, leftOrigin + direction);
         Gizmos.DrawLine(rightOrigin, rightOrigin + direction);
+    }
+
+    public void HandleReverseMovement(bool reverseMovement)
+    {
+        isReversedMovement = reverseMovement;
     }
 }
