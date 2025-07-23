@@ -121,19 +121,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0777f31e6851cb45b75eec5e8e00aa8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  horizontalSpeed: 800
-  jumpForce: 10
-  distanceCanJump: 0.55
-  gravityForce: 800
-  maxSpeed: 7
   groundLayer:
     serializedVersion: 2
     m_Bits: 1
   playerCollider: {fileID: 1421245574942329584}
   rigidBody: {fileID: 7855072791155510523}
+  horizontalSpeed: 800
+  jumpForce: 10
+  distanceCanJump: 0.6
+  gravityForce: 800
+  maxSpeed: 7
   canReverseGravity: 0
   reverseGravityAirMultiplier: 3
   raycastMultiplier: 0.9
+  startReversedMovement: 0
+  skinWidth: 0.02
 --- !u!114 &-6211419758947111792
 MonoBehaviour:
   m_ObjectHideFlags: 0

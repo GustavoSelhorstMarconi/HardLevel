@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 using UnityEngine.ResourceManagement.AsyncOperations;
@@ -17,16 +18,18 @@ public class LevelControl : MonoBehaviour
     private GameObject currentLevel;
     private string currentLevelName;
     public int currentLevelIndex = 1;
+    private bool isLoading = false;
+    private AsyncOperationHandle<GameObject> pendingLoadOperation;
     
     private void Awake()
     {
         if (Instance != null && Instance != this)
         {
-            Destroy(this);
+            Destroy(gameObject);
         }
         
         Instance = this;
-        DontDestroyOnLoad(this);
+        DontDestroyOnLoad(gameObject);
     }
 
     private void Start()
@@ -67,26 +70,42 @@ public class LevelControl : MonoBehaviour
 
     private void LoadLevel(string levelName)
     {
+        if (isLoading) return;
+        
+        StartCoroutine(LoadLevelCoroutine(levelName));
+    }
+
+    private IEnumerator LoadLevelCoroutine(string levelName)
+    {
+        isLoading = true;
+        
         if (currentLevel != null)
         {
             Addressables.ReleaseInstance(currentLevel);
+            
             Destroy(currentLevel);
+            yield return null;
         }
-        
-        Addressables.InstantiateAsync(levelName).Completed += OnLevelLoaded;
-    }
 
-    private void OnLevelLoaded(AsyncOperationHandle<GameObject> obj)
-    {
-        if (obj.Status == AsyncOperationStatus.Succeeded)
+        if (pendingLoadOperation.IsValid())
         {
-            currentLevel = obj.Result;
-            Debug.Log("Level loaded");
+            Addressables.Release(pendingLoadOperation);
+        }
+
+        pendingLoadOperation = Addressables.InstantiateAsync(levelName);
+        yield return pendingLoadOperation;
+
+        if (pendingLoadOperation.Status == AsyncOperationStatus.Succeeded)
+        {
+            currentLevel = pendingLoadOperation.Result;
+            Debug.Log($"Level loaded: {levelName}");
         }
         else
         {
-            Debug.Log("Erro");
+            Debug.LogError($"Error loading level: {levelName}");
         }
+
+        isLoading = false;
     }
 
     private void OnDestroy()

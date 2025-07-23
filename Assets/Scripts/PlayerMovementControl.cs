@@ -30,6 +30,8 @@ public class PlayerMovementControl : MonoBehaviour
     private float raycastMultiplier;
     [SerializeField]
     private bool startReversedMovement;
+    [SerializeField]
+    private float skinWidth;
 
     private bool canJump = true;
     private Vector2 movementInput;
@@ -96,15 +98,27 @@ public class PlayerMovementControl : MonoBehaviour
 
     private void VerifyJump()
     {
-        Vector2 origin = transform.position;
-        Vector2 leftOrigin = origin + Vector2.left * halfWidth;
-        Vector2 rightOrigin = origin + Vector2.right * halfWidth;
-        
-        RaycastHit2D centerHit = Physics2D.Raycast(origin, isGravityReversed ? Vector2.up : Vector2.down, distanceCanJump, groundLayer);
-        RaycastHit2D leftHit = Physics2D.Raycast(leftOrigin, isGravityReversed ? Vector2.up : Vector2.down, distanceCanJump, groundLayer);
-        RaycastHit2D rightHit = Physics2D.Raycast(rightOrigin, isGravityReversed ? Vector2.up : Vector2.down, distanceCanJump, groundLayer);
-        
-        canJump = centerHit.collider != null || leftHit.collider != null || rightHit.collider != null;
+        Vector2 boxSize = new Vector2(
+            playerCollider.bounds.size.x - 2 * skinWidth,
+            0.1f
+        );
+
+        Vector2 origin = (Vector2)playerCollider.bounds.center
+                         + (isGravityReversed ? Vector2.up : Vector2.down)
+                         * (playerCollider.bounds.extents.y - boxSize.y / 2 + skinWidth);
+
+        Vector2 direction = isGravityReversed ? Vector2.up : Vector2.down;
+
+        RaycastHit2D hit = Physics2D.BoxCast(
+            origin,
+            boxSize,
+            0f,
+            direction,
+            distanceCanJump,
+            groundLayer
+        );
+
+        canJump = hit.collider != null;
     }
 
     private void HandleMovementInput()
@@ -140,16 +154,17 @@ public class PlayerMovementControl : MonoBehaviour
     
     private void OnDrawGizmos()
     {
-        Vector2 origin = transform.position;
-        Vector2 leftOrigin = origin + Vector2.left * halfWidth;
-        Vector2 rightOrigin = origin + Vector2.right * halfWidth;
-        
-        Vector2 direction = isGravityReversed ? Vector2.up * distanceCanJump : Vector2.down * distanceCanJump;
+        float width = playerCollider.bounds.size.x - 2 * skinWidth;
+        float height = 0.1f;
+        Vector2 boxSize = new Vector2(width, height);
 
+        Vector2 origin = (Vector2)playerCollider.bounds.center
+                         + (isGravityReversed ? Vector2.up : Vector2.down)
+                         * (playerCollider.bounds.extents.y - height / 2 + skinWidth);
+
+        // Desenha a caixa usada no BoxCast
         Gizmos.color = Color.green;
-        Gizmos.DrawLine(origin, origin + direction);
-        Gizmos.DrawLine(leftOrigin, leftOrigin + direction);
-        Gizmos.DrawLine(rightOrigin, rightOrigin + direction);
+        Gizmos.DrawWireCube(origin, boxSize);
     }
 
     public void HandleReverseMovement(bool reverseMovement)
