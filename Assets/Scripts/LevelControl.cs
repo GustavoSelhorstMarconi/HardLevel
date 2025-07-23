@@ -36,6 +36,12 @@ public class LevelControl : MonoBehaviour
         OnLevelChange?.Invoke(this, EventArgs.Empty);
     }
 
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.PageUp))
+            RestartLevel();
+    }
+
     public void LoadNextLevel()
     {
         currentLevelIndex = currentLevelIndex + 1 > maxLevel ? maxLevel : currentLevelIndex + 1;
