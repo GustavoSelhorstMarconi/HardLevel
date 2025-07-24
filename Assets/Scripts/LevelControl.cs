@@ -19,7 +19,6 @@ public class LevelControl : MonoBehaviour
     private string currentLevelName;
     public int currentLevelIndex = 1;
     private bool isLoading = false;
-    private AsyncOperationHandle<GameObject> pendingLoadOperation;
     
     private void Awake()
     {
@@ -71,41 +70,32 @@ public class LevelControl : MonoBehaviour
     private void LoadLevel(string levelName)
     {
         if (isLoading) return;
-        
-        StartCoroutine(LoadLevelCoroutine(levelName));
-    }
-
-    private IEnumerator LoadLevelCoroutine(string levelName)
-    {
+    
         isLoading = true;
-        
+    
         if (currentLevel != null)
         {
             Addressables.ReleaseInstance(currentLevel);
-            
             Destroy(currentLevel);
-            yield return null;
         }
-
-        if (pendingLoadOperation.IsValid())
+    
+        Addressables.InstantiateAsync(levelName).Completed += (obj) => {
+            isLoading = false;
+            OnLevelLoaded(obj);
+        };
+    }
+    
+    private void OnLevelLoaded(AsyncOperationHandle<GameObject> obj)
+    {
+        if (obj.Status == AsyncOperationStatus.Succeeded)
         {
-            Addressables.Release(pendingLoadOperation);
-        }
-
-        pendingLoadOperation = Addressables.InstantiateAsync(levelName);
-        yield return pendingLoadOperation;
-
-        if (pendingLoadOperation.Status == AsyncOperationStatus.Succeeded)
-        {
-            currentLevel = pendingLoadOperation.Result;
-            Debug.Log($"Level loaded: {levelName}");
+            currentLevel = obj.Result;
+            Debug.Log("Level loaded");
         }
         else
         {
-            Debug.LogError($"Error loading level: {levelName}");
+            Debug.Log("Erro");
         }
-
-        isLoading = false;
     }
 
     private void OnDestroy()
@@ -129,5 +119,13 @@ public class LevelControl : MonoBehaviour
     public int GetCurrentLevelIndex()
     {
         return currentLevelIndex;
+    }
+
+    public Transform GetCurrentLevelTransform()
+    {
+        if (currentLevel != null)
+            
+            return currentLevel.transform;
+        return null;
     }
 }

@@ -707,7 +707,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e03d222c2f9e2a4458d37607ba615086, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelAmount: 11
+  levelAmount: 12
   levelTemplate: {fileID: 1584882667}
 --- !u!1 &625445402
 GameObject:
@@ -771,6 +771,7 @@ MonoBehaviour:
   - "Voc\xEA n\xE3o est\xE1 sozinho. Tem seus erros com voc\xEA."
   - "A l\xF3gica aqui \xE9 opcional. Boa sorte."
   - "Talvez voc\xEA passe de primeira. Talvez o universo brinque com sua esperan\xE7a."
+  - "Voc\xEA vai se lembrar desse n\xEDvel. Por bons ou maus motivos."
 --- !u!1 &640884925
 GameObject:
   m_ObjectHideFlags: 0
@@ -1901,7 +1902,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   defaultLevelName: Level
-  maxLevel: 11
+  maxLevel: 12
   currentLevelIndex: 1
 --- !u!1 &1584882666
 GameObject:

@@ -247,3 +247,5 @@ MonoBehaviour:
   speedMovement: 7
   moveOnStart: 0
   followPlayerWhenTrigger: 0
+  destroy: 1
+  delayDestroy: 10

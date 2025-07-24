@@ -11,6 +11,10 @@ public class MoveObject : MonoBehaviour
     private bool moveOnStart;
     [SerializeField]
     private bool followPlayerWhenTrigger;
+    [SerializeField]
+    private bool destroy;
+    [SerializeField]
+    private float delayDestroy;
 
     private bool canMove;
     private Transform playerTransform;
@@ -56,6 +60,9 @@ public class MoveObject : MonoBehaviour
                 playerTransform = other.transform;
                 distancePlayer = playerTransform.position.x - transform.position.x;
             }
+            
+            if (destroy)
+                Destroy(gameObject, delayDestroy);
         }
     }
 }

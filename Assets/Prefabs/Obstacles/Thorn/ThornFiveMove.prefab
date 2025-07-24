@@ -561,6 +561,8 @@ MonoBehaviour:
   speedMovement: 7
   moveOnStart: 1
   followPlayerWhenTrigger: 1
+  destroy: 0
+  delayDestroy: 0
 --- !u!61 &5253259165237866587
 BoxCollider2D:
   m_ObjectHideFlags: 0
