@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3811119827162096903}
   - component: {fileID: 531281527843021361}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Triangle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -100,7 +100,7 @@ GameObject:
   - component: {fileID: 1167624091661337337}
   - component: {fileID: 7883560905046472844}
   - component: {fileID: 9198903459952589491}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: ThornOneMove
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7489771718295522539}
   - component: {fileID: 3597821025430025009}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Triangle (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -97,7 +97,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2986518695976701723}
   - component: {fileID: 2041496431495640345}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Triangle (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -184,7 +184,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7808880772383195074}
   - component: {fileID: 4818415784790584311}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Triangle (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -271,7 +271,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3811119827162096903}
   - component: {fileID: 531281527843021361}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Triangle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -358,7 +358,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3513150482061554145}
   - component: {fileID: 5296604395381217728}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Triangle (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -448,7 +448,7 @@ GameObject:
   - component: {fileID: 9198903459952589491}
   - component: {fileID: 5253259165237866587}
   - component: {fileID: 3215277054261914158}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: ThornFiveMovePosition
   m_TagString: Untagged
   m_Icon: {fileID: 0}
