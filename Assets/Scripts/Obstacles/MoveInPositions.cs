@@ -6,25 +6,54 @@ public class MoveInPositions : MonoBehaviour
     [SerializeField]
     private float movementSpeed;
     [SerializeField]
-    private bool moveOnStart;
-    [SerializeField]
     private bool afterPositionMoveBackToStart;
     [SerializeField]
     private Transform[] positions;
+    [SerializeField]
+    private MoveType moveType;
+    [SerializeField]
+    private float timeStartMove;
+    [SerializeField]
+    private Rigidbody2D rigidbody2D;
 
     private float currentMovement;
     private bool isMoving;
     private int currentPositionIndex = 0;
     private bool isBackwards = false;
+    private float timerStartMove;
+
+    private enum MoveType
+    {
+        onStart,
+        onTrigger,
+        afterTime,
+    }
 
     private void Start()
     {
-        isMoving = moveOnStart;
+        isMoving = moveType == MoveType.onStart;
+        timerStartMove = timeStartMove;
+    }
+
+    private void Update()
+    {
+        HandleMoveByTime();
     }
 
     private void FixedUpdate()
     {
         HandleMovement();
+    }
+    
+    private void HandleMoveByTime()
+    {
+        if (moveType != MoveType.afterTime)
+            return;
+        
+        timerStartMove -= Time.deltaTime;
+        
+        if (timerStartMove <= 0)
+            isMoving = true;
     }
 
     private void HandleMovement()
@@ -34,7 +63,7 @@ public class MoveInPositions : MonoBehaviour
         
         currentMovement = Mathf.MoveTowards(currentMovement, 1f, movementSpeed * Time.deltaTime);
         
-        Vector2 positionToMove = Vector2.Lerp(positions[currentPositionIndex].localPosition, GetNextPosition(), currentMovement);
+        Vector2 positionToMove = Vector2.Lerp(positions[currentPositionIndex].position, GetNextPosition(), currentMovement);
 
         if (currentMovement >= 1f)
         {
@@ -47,14 +76,14 @@ public class MoveInPositions : MonoBehaviour
             currentMovement = 0f;
         }
         
-        transform.localPosition = positionToMove;
+        rigidbody2D.MovePosition(positionToMove);
     }
 
     private Vector2 GetNextPosition()
     {
         int nextIndexPosition = GetNextPositionIndex();
         
-        return positions[nextIndexPosition].localPosition;
+        return positions[nextIndexPosition].position;
     }
 
     private int GetNextPositionIndex()
@@ -83,7 +112,7 @@ public class MoveInPositions : MonoBehaviour
 
     public void StartMoveByTrigger()
     {
-        if (isMoving)
+        if (isMoving || moveType != MoveType.onTrigger)
             return;
         
         isMoving = true;

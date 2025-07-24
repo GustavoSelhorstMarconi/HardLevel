@@ -5,6 +5,7 @@
     <type fullname="LoseOnTouch" preserve="all" />
     <type fullname="MoveInPositions" preserve="all" />
     <type fullname="MoveObject" preserve="all" />
+    <type fullname="MoveObjectTrigger" preserve="all" />
     <type fullname="MoveToPosition" preserve="all" />
     <type fullname="PlayerControl" preserve="all" />
     <type fullname="PlayerMovementControl" preserve="all" />

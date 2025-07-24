@@ -1693,6 +1693,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2674265620288203498, guid: 4406764ce2edfbc4987fa3b9a0c6f248, type: 3}
+      propertyPath: moveType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2674265620288203498, guid: 4406764ce2edfbc4987fa3b9a0c6f248, type: 3}
       propertyPath: moveOnStart
       value: 0
       objectReference: {fileID: 0}
