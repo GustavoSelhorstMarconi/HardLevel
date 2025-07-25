@@ -36,6 +36,7 @@ public class LevelControl : MonoBehaviour
         currentLevelName = GetLevelName();
         LoadLevel(currentLevelName);
         OnLevelChange?.Invoke(this, EventArgs.Empty);
+        DataSaveControl.Instance.Save(DataSaveControl.DEATH_COUNT_KEY_NAME, 0);
     }
 
     private void Update()
