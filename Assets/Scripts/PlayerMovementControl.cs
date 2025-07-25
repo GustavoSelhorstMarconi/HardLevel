@@ -3,6 +3,8 @@ using UnityEngine;
 
 public class PlayerMovementControl : MonoBehaviour
 {
+    public static PlayerMovementControl Instance { get; set; }
+    
     [Header("References")]
     [SerializeField]
     private LayerMask groundLayer;
@@ -48,6 +50,16 @@ public class PlayerMovementControl : MonoBehaviour
     }
     
     private LastAirButtonPressed lastAirButtonPressed;
+
+    private void Awake()
+    {
+        if (Instance != null && Instance != this)
+        {
+            Destroy(gameObject);
+        }
+        
+        Instance = this;
+    }
 
     private void Start()
     {

@@ -124,8 +124,8 @@ public class LevelControl : MonoBehaviour
     public Transform GetCurrentLevelTransform()
     {
         if (currentLevel != null)
-            
             return currentLevel.transform;
+        
         return null;
     }
 }
