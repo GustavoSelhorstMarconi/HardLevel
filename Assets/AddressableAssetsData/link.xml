@@ -10,6 +10,7 @@
     <type fullname="PlayerControl" preserve="all" />
     <type fullname="PlayerMovementControl" preserve="all" />
     <type fullname="ReversePlayerMovement" preserve="all" />
+    <type fullname="ReversePlayerMovementByTime" preserve="all" />
     <type fullname="TriggerStartMovePlatform" preserve="all" />
   </assembly>
   <assembly fullname="Unity.Addressables, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" preserve="all">
