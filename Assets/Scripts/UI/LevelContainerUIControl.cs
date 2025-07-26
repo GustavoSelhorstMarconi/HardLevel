@@ -26,7 +26,7 @@ public class LevelContainerUIControl : MonoBehaviour
             Destroy(child.gameObject);
         }
 
-        for (int i = 1; i <= levelAmount; i++)
+        for (int i = 0; i < levelAmount; i++)
         {
             Transform levelTransform = Instantiate(levelTemplate, transform);
             levelTransform.gameObject.SetActive(true);

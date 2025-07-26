@@ -1,0 +1,120 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00f53569f67404c4aa3120ff600d8d7f, type: 3}
+  m_Name: LevelsAvailable
+  m_EditorClassIdentifier: 
+  levels:
+  - levelName: Level 1
+    levelPrefab:
+      m_AssetGUID: ae2aac8f7f3e4814baa802104df897d8
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_SubObjectGUID: 
+      m_EditorAssetChanged: 0
+  - levelName: Level 2
+    levelPrefab:
+      m_AssetGUID: 284dc60876bc2804cacc2d6345d3cb94
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_SubObjectGUID: 
+      m_EditorAssetChanged: 0
+  - levelName: Level 3
+    levelPrefab:
+      m_AssetGUID: 89c24662ef0612446852788002992c00
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_SubObjectGUID: 
+      m_EditorAssetChanged: 0
+  - levelName: Level 4
+    levelPrefab:
+      m_AssetGUID: b69f8ebe8ea932e4896621e57d9b916c
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_SubObjectGUID: 
+      m_EditorAssetChanged: 0
+  - levelName: Level 5
+    levelPrefab:
+      m_AssetGUID: 794c477078dd4de49a77b693ae4b1fb1
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_SubObjectGUID: 
+      m_EditorAssetChanged: 0
+  - levelName: Level 6
+    levelPrefab:
+      m_AssetGUID: ceb352dcee0e55548937b69f97275168
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_SubObjectGUID: 
+      m_EditorAssetChanged: 0
+  - levelName: Level 7
+    levelPrefab:
+      m_AssetGUID: 7ea40f9149b1f104bac07e10761ba5d7
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_SubObjectGUID: 
+      m_EditorAssetChanged: 0
+  - levelName: Level 8
+    levelPrefab:
+      m_AssetGUID: 454f023d19ca1254094aed0726ccc425
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_SubObjectGUID: 
+      m_EditorAssetChanged: 0
+  - levelName: Level 9
+    levelPrefab:
+      m_AssetGUID: 47304132d41eddd4db4404ec2f34f5bc
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_SubObjectGUID: 
+      m_EditorAssetChanged: 0
+  - levelName: Level 10
+    levelPrefab:
+      m_AssetGUID: 50ff5ad2907bd0d4184f95568f239795
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_SubObjectGUID: 
+      m_EditorAssetChanged: 0
+  - levelName: Level 11
+    levelPrefab:
+      m_AssetGUID: 056ecc3e4af8c694593d29b5a115fc05
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_SubObjectGUID: 
+      m_EditorAssetChanged: 0
+  - levelName: Level 12
+    levelPrefab:
+      m_AssetGUID: 3438478b3940fd9469a598cf4c66d64e
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_SubObjectGUID: 
+      m_EditorAssetChanged: 0
+  - levelName: Level 13
+    levelPrefab:
+      m_AssetGUID: 9a0174fe47232b94599ef084a49b7ba7
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_SubObjectGUID: 
+      m_EditorAssetChanged: 0
+  - levelName: Level 14
+    levelPrefab:
+      m_AssetGUID: 25257a7f8f40ace44b7392c6846473ce
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_SubObjectGUID: 
+      m_EditorAssetChanged: 0
+  - levelName: Level 15
+    levelPrefab:
+      m_AssetGUID: a52c4a21addb4c5478da074214b5c9cc
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_SubObjectGUID: 
+      m_EditorAssetChanged: 0

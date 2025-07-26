@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class LoseOnTouch : MonoBehaviour
 {
@@ -8,7 +9,11 @@ public class LoseOnTouch : MonoBehaviour
         if (other.gameObject.TryGetComponent<PlayerControl>(out PlayerControl playerControl))
         {
             playerControl.HandleDestroyPlayer();
-            LevelControl.Instance.RestartLevel();
+
+            if (LevelControl.Instance != null)
+                LevelControl.Instance.RestartLevel();
+            else
+                SceneManager.LoadScene("TestScene");
         }
     }
 }

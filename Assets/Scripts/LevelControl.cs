@@ -1,5 +1,4 @@
 using System;
-using System.Collections;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 using UnityEngine.ResourceManagement.AsyncOperations;
@@ -11,14 +10,12 @@ public class LevelControl : MonoBehaviour
     public event EventHandler OnLevelChange;
 
     [SerializeField]
-    private string defaultLevelName;
-    [SerializeField]
-    private int maxLevel;
+    private LevelsAvailable levelsAvailable;
 
     private GameObject currentLevel;
-    private string currentLevelName;
     public int currentLevelIndex = 1;
     private bool isLoading = false;
+    private int maxLevel => levelsAvailable.levels.Count - 1;
     
     private void Awake()
     {
@@ -33,8 +30,7 @@ public class LevelControl : MonoBehaviour
 
     private void Start()
     {
-        currentLevelName = GetLevelName();
-        LoadLevel(currentLevelName);
+        LoadLevel(currentLevelIndex);
         OnLevelChange?.Invoke(this, EventArgs.Empty);
         DataSaveControl.Instance.Save(DataSaveControl.DEATH_COUNT_KEY_NAME, 0);
     }
@@ -48,29 +44,31 @@ public class LevelControl : MonoBehaviour
     public void LoadNextLevel()
     {
         currentLevelIndex = currentLevelIndex + 1 > maxLevel ? maxLevel : currentLevelIndex + 1;
-        currentLevelName = GetLevelName();
         
-        LoadLevel(currentLevelName);
+        LoadLevel(currentLevelIndex);
         OnLevelChange?.Invoke(this, EventArgs.Empty);
     }
 
     public void RestartLevel()
     {
-        LoadLevel(currentLevelName);
+        LoadLevel(currentLevelIndex);
     }
     
     public void LoadLevelByNumber(int levelNumber)
     {
         currentLevelIndex = levelNumber;
-        currentLevelName = GetLevelName();
         
-        LoadLevel(currentLevelName);
-        OnLevelChange?.Invoke(this, EventArgs.Empty);
+        LoadLevel(currentLevelIndex);
+        OnLevelChange?.Invoke(this, EventArgs.Empty); 
     }
 
-    private void LoadLevel(string levelName)
+    private void LoadLevel(int levelIndex)
     {
-        if (isLoading) return;
+        if (isLoading)
+            return;
+        
+        if (levelIndex < 0 || levelIndex >= levelsAvailable.levels.Count)
+            return;
     
         isLoading = true;
     
@@ -80,7 +78,8 @@ public class LevelControl : MonoBehaviour
             Destroy(currentLevel);
         }
     
-        Addressables.InstantiateAsync(levelName).Completed += (obj) => {
+        AssetReferenceGameObject levelReference = levelsAvailable.levels[levelIndex].levelPrefab;
+        Addressables.InstantiateAsync(levelReference).Completed += (obj) => {
             isLoading = false;
             OnLevelLoaded(obj);
         };
@@ -107,14 +106,9 @@ public class LevelControl : MonoBehaviour
         }
     }
 
-    private string GetLevelName()
-    {
-        return defaultLevelName + currentLevelIndex.ToString("D2");
-    }
-
     public string GetLevelNameUI()
     {
-        return defaultLevelName + " " + currentLevelIndex.ToString();
+        return levelsAvailable.levels[currentLevelIndex].levelName;
     }
 
     public int GetCurrentLevelIndex()

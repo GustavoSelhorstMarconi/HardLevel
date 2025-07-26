@@ -11,7 +11,7 @@ public class LevelButtonSingleUI : MonoBehaviour
 
     public void SetOnClick(int levelNumber)
     {
-        levelText.text = "Level "  + levelNumber;
+        levelText.text = "Level "  + (levelNumber + 1);
         
         levelButton.onClick.AddListener(() =>
         {

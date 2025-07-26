@@ -20,7 +20,7 @@ public class LevelMessageUI : MonoBehaviour
 
         for (int i = 0; i < messages.Count; i++)
         {
-            levelMessages.Add(i + 1, messages[i]);
+            levelMessages.Add(i, messages[i]);
         }
     }
 
