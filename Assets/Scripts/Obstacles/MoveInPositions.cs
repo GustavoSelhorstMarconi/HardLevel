@@ -14,7 +14,7 @@ public class MoveInPositions : MonoBehaviour
     [SerializeField]
     private float timeStartMove;
     [SerializeField]
-    private Rigidbody2D rigidbody2D;
+    private Rigidbody2D objectRigidbody;
 
     private float currentMovement;
     private bool isMoving;
@@ -76,7 +76,7 @@ public class MoveInPositions : MonoBehaviour
             currentMovement = 0f;
         }
         
-        rigidbody2D.MovePosition(positionToMove);
+        objectRigidbody.MovePosition(positionToMove);
     }
 
     private Vector2 GetNextPosition()
