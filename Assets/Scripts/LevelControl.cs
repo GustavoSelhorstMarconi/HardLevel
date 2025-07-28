@@ -62,7 +62,7 @@ public class LevelControl : MonoBehaviour
         OnLevelChange?.Invoke(this, EventArgs.Empty); 
     }
 
-    private void LoadLevel(int levelIndex)
+    private async void LoadLevel(int levelIndex)
     {
         if (isLoading)
             return;
@@ -79,10 +79,27 @@ public class LevelControl : MonoBehaviour
         }
     
         AssetReferenceGameObject levelReference = levelsAvailable.levels[levelIndex].levelPrefab;
-        Addressables.InstantiateAsync(levelReference).Completed += (obj) => {
-            isLoading = false;
-            OnLevelLoaded(obj);
-        };
+        
+        AsyncOperationHandle<GameObject> handle = Addressables.InstantiateAsync(levelReference);
+        await handle.Task;
+        
+        isLoading = false;
+        
+        if (handle.Status == AsyncOperationStatus.Succeeded)
+        {
+            currentLevel = handle.Result;
+            Debug.Log("Level loaded");
+        }
+        else
+        {
+            Debug.Log("Erro");
+        }
+        
+        // Addressables.InstantiateAsync(levelReference).Completed += (obj) => {
+        //     isLoading = false;
+        //     
+        //     OnLevelLoaded(obj);
+        // };
     }
     
     private void OnLevelLoaded(AsyncOperationHandle<GameObject> obj)
