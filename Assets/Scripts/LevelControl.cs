@@ -77,13 +77,15 @@ public class LevelControl : MonoBehaviour
             Addressables.ReleaseInstance(currentLevel);
             Destroy(currentLevel);
         }
-    
+
+        Time.timeScale = 0f;
         AssetReferenceGameObject levelReference = levelsAvailable.levels[levelIndex].levelPrefab;
         
         AsyncOperationHandle<GameObject> handle = Addressables.InstantiateAsync(levelReference);
         await handle.Task;
         
         isLoading = false;
+        Time.timeScale = 1f;
         
         if (handle.Status == AsyncOperationStatus.Succeeded)
         {
