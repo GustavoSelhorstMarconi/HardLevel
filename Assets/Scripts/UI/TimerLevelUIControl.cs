@@ -28,6 +28,11 @@ public class TimerLevelUIControl : MonoBehaviour
     {
         currentLevelTime += Time.deltaTime;
         
-        timerText.text = currentLevelTime.ToString("F2");
+        int minutes = Mathf.FloorToInt(currentLevelTime / 60f);
+        int seconds = Mathf.FloorToInt(currentLevelTime % 60f);
+        int milliseconds = Mathf.FloorToInt((currentLevelTime * 100f) % 100f);
+        
+        timerText.text = string.Format("{0}:{1:00}:{2:00}", 
+            minutes, seconds, milliseconds);
     }
 }

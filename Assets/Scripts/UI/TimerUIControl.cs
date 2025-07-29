@@ -18,6 +18,11 @@ public class TimerUIControl : MonoBehaviour
     {
         currentTime += Time.deltaTime;
         
-        timerText.text = currentTime.ToString("F2");
+        int minutes = Mathf.FloorToInt(currentTime / 60f);
+        int seconds = Mathf.FloorToInt(currentTime % 60f);
+        int milliseconds = Mathf.FloorToInt((currentTime * 100f) % 100f);
+        
+        timerText.text = string.Format("{0}:{1:00}:{2:00}", 
+            minutes, seconds, milliseconds);
     }
 }

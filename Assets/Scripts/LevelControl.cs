@@ -59,10 +59,18 @@ public class LevelControl : MonoBehaviour
         currentLevelIndex = levelNumber;
         
         LoadLevel(currentLevelIndex);
-        OnLevelChange?.Invoke(this, EventArgs.Empty); 
+        OnLevelChange?.Invoke(this, EventArgs.Empty);
     }
 
-    private async void LoadLevel(int levelIndex)
+    private void LoadLevel(int levelIndex)
+    {
+        LevelTransitionUIControl.Instance.StartFadeIn(() =>
+        {
+            LoadLevelAsync(levelIndex);
+        });
+    }
+
+    private async void LoadLevelAsync(int levelIndex)
     {
         if (isLoading)
             return;
@@ -90,6 +98,7 @@ public class LevelControl : MonoBehaviour
         if (handle.Status == AsyncOperationStatus.Succeeded)
         {
             currentLevel = handle.Result;
+            LevelTransitionUIControl.Instance.StartFadeOut();
             Debug.Log("Level loaded");
         }
         else

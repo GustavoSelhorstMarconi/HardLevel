@@ -270,7 +270,7 @@ MonoBehaviour:
   - {fileID: 8930149119972128073}
   moveType: 0
   timeStartMove: 0
-  rigidbody2D: {fileID: 2161851000411701935}
+  objectRigidbody: {fileID: 2161851000411701935}
 --- !u!61 &1042611063405040134
 BoxCollider2D:
   m_ObjectHideFlags: 0

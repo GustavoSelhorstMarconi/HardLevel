@@ -6,12 +6,26 @@ using TMPro;
 public class LevelMessageUI : MonoBehaviour
 {
     [SerializeField]
-    private TextMeshProUGUI levelMessageText;
+    private TextMeshProUGUI pcLevelMessageText;
+    [SerializeField]
+    private TextMeshProUGUI mobileLevelMessageText;
     [SerializeField]
     private List<string> messages;
     
     private Dictionary<int, string> levelMessages;
-    
+    private TextMeshProUGUI levelMessageText;
+
+    private void Awake()
+    {
+#if UNITY_ANDROID
+        levelMessageText = mobileLevelMessageText;
+        pcLevelMessageText.enabled = false;
+#else
+        levelMessageText = pcLevelMessageText;
+        mobileLevelMessageText.enabled = false;
+#endif
+    }
+
     private void Start()
     {
         LevelControl.Instance.OnLevelChange += LevelControlOnLevelChange;
