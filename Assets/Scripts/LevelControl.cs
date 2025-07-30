@@ -151,4 +151,9 @@ public class LevelControl : MonoBehaviour
         
         return null;
     }
+
+    public int GetLevelAmount()
+    {
+        return levelsAvailable.levels.Count;
+    }
 }

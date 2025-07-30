@@ -4,13 +4,14 @@ using UnityEngine;
 public class LevelContainerUIControl : MonoBehaviour
 {
     [SerializeField]
-    private int levelAmount;
-    [SerializeField]
     private Transform levelTemplate;
 
+    private int levelAmount;
+    
     private void Start()
     {
         levelTemplate.gameObject.SetActive(false);
+        levelAmount = LevelControl.Instance.GetLevelAmount();
 
         UpdateLevelsUI();
     }
