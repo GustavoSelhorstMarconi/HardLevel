@@ -101,13 +101,19 @@ public class MoveInPositions : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D other)
     {
         if (other.gameObject.TryGetComponent<PlayerControl>(out _))
+        {
             other.transform.SetParent(transform);
+            other.transform.GetComponent<PlayerMovementControl>().HandleEnterPlatform();
+        }
     }
 
     private void OnCollisionExit2D(Collision2D other)
     {
         if (other.gameObject.TryGetComponent<PlayerControl>(out _))
+        {
             other.transform.SetParent(LevelControl.Instance.GetCurrentLevelTransform());
+            other.transform.GetComponent<PlayerMovementControl>().HandleExitPlatform();
+        }
     }
 
     public void StartMoveByTrigger()

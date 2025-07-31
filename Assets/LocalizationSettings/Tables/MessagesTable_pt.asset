@@ -88,6 +88,10 @@ MonoBehaviour:
     m_Localized: "Voc\xEA acha que algu\xE9m realmente se importa?"
     m_Metadata:
       m_Items: []
+  - m_Id: 119290415489024
+    m_Localized: "O jogo n\xE3o est\xE1 te enganando. Voc\xEA se deixa enganar."
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

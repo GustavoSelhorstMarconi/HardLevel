@@ -136,6 +136,8 @@ MonoBehaviour:
   raycastMultiplier: 0.9
   startReversedMovement: 0
   skinWidth: 0.02
+  gravityOnPlatform: 5
+  baseMultiplierOnPlatform: 2.5
 --- !u!114 &-6211419758947111792
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -1345,24 +1345,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pcLevelMessageText: {fileID: 325057519}
   mobileLevelMessageText: {fileID: 1435047376}
-  messages:
-  - Errou? Culpe o jogo. Sempre funciona.
-  - "\xC9 s\xF3 n\xE3o morrer. F\xE1cil, n\xE9?"
-  - "Voc\xEA est\xE1 indo bem. Estatisticamente, algu\xE9m pior que voc\xEA existe."
-  - "Voc\xEA est\xE1 aprendendo\u2026 lentamente. Mas est\xE1."
-  - "\xC0s vezes, o caminho mais \xF3bvio leva direto ao abismo."
-  - "Errar aqui n\xE3o d\xF3i. L\xE1 fora, \xE0s vezes d\xF3i mais."
-  - "Este n\xEDvel foi feito com carinho\u2026 e crueldade."
-  - "O que \xE9 o fracasso, sen\xE3o uma aula mal interpretada?"
-  - "Voc\xEA n\xE3o est\xE1 sozinho. Tem seus erros com voc\xEA."
-  - "A l\xF3gica aqui \xE9 opcional. Boa sorte."
-  - "Talvez voc\xEA passe de primeira. Talvez o universo brinque com sua esperan\xE7a."
-  - "Voc\xEA vai se lembrar desse n\xEDvel. Por bons ou maus motivos."
-  - "Voc\xEA ainda l\xEA essas mensagens? Corajoso."
-  - "Por que voc\xEA ainda tenta? Desistir n\xE3o \xE9 t\xE3o ruim."
-  - "Voc\xEA acha que algu\xE9m realmente se importa?"
-  - "Ningu\xE9m vai estar te esperando depois da porta."
-  - "Voc\xEA est\xE1 persistindo? Que desperd\xEDcio de tempo admir\xE1vel."
 --- !u!1 &640884925
 GameObject:
   m_ObjectHideFlags: 0

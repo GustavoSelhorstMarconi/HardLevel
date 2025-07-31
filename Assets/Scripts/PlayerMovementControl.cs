@@ -34,6 +34,10 @@ public class PlayerMovementControl : MonoBehaviour
     private bool startReversedMovement;
     [SerializeField]
     private float skinWidth;
+    [SerializeField]
+    private float gravityOnPlatform;
+    [SerializeField]
+    private float baseMultiplierOnPlatform;
 
     private bool canJump = true;
     private Vector2 movementInput;
@@ -42,6 +46,8 @@ public class PlayerMovementControl : MonoBehaviour
     private bool isReversedMovement;
     private int jumpGravityMultiplier => isGravityReversed ? -1 : 1;
     private int movementReversedMultiplier => isReversedMovement ?  -1 : 1;
+    private float multiplierOnPlatform => isOnPlatform ? baseMultiplierOnPlatform : 1f;
+    private bool isOnPlatform = false;
 
     private enum LastAirButtonPressed
     {
@@ -140,7 +146,8 @@ public class PlayerMovementControl : MonoBehaviour
 
     private void HandleMovement()
     {
-        Vector2 movementValue = movementInput * horizontalSpeed * Time.deltaTime * movementReversedMultiplier;
+        Vector2 movementValue = movementInput * horizontalSpeed * Time.deltaTime * movementReversedMultiplier * multiplierOnPlatform;
+        
         movementValue.y = 0f;
         
         rigidBody.AddForce(movementValue);
@@ -182,5 +189,17 @@ public class PlayerMovementControl : MonoBehaviour
     public void HandleReverseMovement(bool reverseMovement)
     {
         isReversedMovement = reverseMovement;
+    }
+
+    public void HandleEnterPlatform()
+    {
+        rigidBody.gravityScale = gravityOnPlatform;
+        isOnPlatform = true;
+    }
+
+    public void HandleExitPlatform()
+    {
+        rigidBody.gravityScale = 1f;
+        isOnPlatform = false;
     }
 }

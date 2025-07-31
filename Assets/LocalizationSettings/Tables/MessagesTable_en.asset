@@ -87,6 +87,10 @@ MonoBehaviour:
     m_Localized: Do you really think anyone cares?
     m_Metadata:
       m_Items: []
+  - m_Id: 119290415489024
+    m_Localized: "The game isn\u2019t tricking you. You let yourself be tricked."
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
