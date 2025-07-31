@@ -1153,8 +1153,8 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 9143206970701990447}
   - {fileID: 5679817472467543612}
+  - {fileID: 9154662466473741841}
   m_Father: {fileID: 9191739336136186495}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -1364,7 +1364,7 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 5037082118823284369, guid: 8b0870cfcc8ba024ab9d71b055b40001, type: 3}
   m_PrefabInstance: {fileID: 807706302033897645}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &1694805978238526976
+--- !u!1001 &1616227393272816190
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -1398,7 +1398,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7594787795186281519, guid: 0696d90a098180046bceeb9114979bc2, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 200
+      value: 280
       objectReference: {fileID: 0}
     - target: {fileID: 7594787795186281519, guid: 0696d90a098180046bceeb9114979bc2, type: 3}
       propertyPath: m_SizeDelta.y
@@ -1434,11 +1434,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7594787795186281519, guid: 0696d90a098180046bceeb9114979bc2, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -100
+      value: -140
       objectReference: {fileID: 0}
     - target: {fileID: 7594787795186281519, guid: 0696d90a098180046bceeb9114979bc2, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -95
+      value: -93
       objectReference: {fileID: 0}
     - target: {fileID: 7594787795186281519, guid: 0696d90a098180046bceeb9114979bc2, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -1461,10 +1461,10 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0696d90a098180046bceeb9114979bc2, type: 3}
---- !u!224 &9143206970701990447 stripped
+--- !u!224 &9154662466473741841 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 7594787795186281519, guid: 0696d90a098180046bceeb9114979bc2, type: 3}
-  m_PrefabInstance: {fileID: 1694805978238526976}
+  m_PrefabInstance: {fileID: 1616227393272816190}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1948728550641409091
 PrefabInstance:

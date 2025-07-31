@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SocialPlatforms;
 
 public class LevelMessageUI : MonoBehaviour
 {
@@ -9,10 +10,7 @@ public class LevelMessageUI : MonoBehaviour
     private TextMeshProUGUI pcLevelMessageText;
     [SerializeField]
     private TextMeshProUGUI mobileLevelMessageText;
-    [SerializeField]
-    private List<string> messages;
     
-    private Dictionary<int, string> levelMessages;
     private TextMeshProUGUI levelMessageText;
 
     private void Awake()
@@ -29,19 +27,27 @@ public class LevelMessageUI : MonoBehaviour
     private void Start()
     {
         LevelControl.Instance.OnLevelChange += LevelControlOnLevelChange;
-        
-        levelMessages = new Dictionary<int, string>();
 
-        for (int i = 0; i < messages.Count; i++)
-        {
-            levelMessages.Add(i, messages[i]);
-        }
+        ShowMessageForLevel();
     }
 
     private void LevelControlOnLevelChange(object sender, EventArgs e)
     {
+        ShowMessageForLevel();
+    }
+
+    private void ShowMessageForLevel()
+    {
         int levelIndex = LevelControl.Instance.GetCurrentLevelIndex();
         
-        levelMessageText.text = levelMessages[levelIndex];
+        string key = LocalizationControl.LEVEL_MESSAGE_BASE_KEY_NAME + levelIndex;
+
+        string message = LocalizationControl.Instance.GetLocalizedText(LocalizationControl.MESSAGES_TABLE_NAME,
+            key);
+        
+        levelMessageText.text = message;
+
+        LocalizationControl.Instance.SetLocalizedText(levelMessageText, key,
+            true, null, true);
     }
 }

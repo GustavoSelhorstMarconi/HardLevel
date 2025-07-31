@@ -136,7 +136,9 @@ public class LevelControl : MonoBehaviour
 
     public string GetLevelNameUI()
     {
-        return levelsAvailable.levels[currentLevelIndex].levelName;
+        string levelString = LocalizationControl.Instance.GetLocalizedText(LocalizationControl.LOCALIZATION_TABLE_NAME, LocalizationControl.LEVEL_KEY_NAME);
+        
+        return levelString + " " + (currentLevelIndex + 1);
     }
 
     public int GetCurrentLevelIndex()

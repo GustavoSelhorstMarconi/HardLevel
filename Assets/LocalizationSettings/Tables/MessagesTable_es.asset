@@ -1,0 +1,93 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: MessagesTable_es
+  m_EditorClassIdentifier: 
+  m_LocaleId:
+    m_Code: es
+  m_SharedData: {fileID: 11400000, guid: 7db05f5cdaded5e46bd1e367493d530f, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 3362755387392
+    m_Localized: "\xBFFallaste? Culpa al juego. Siempre funciona."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3362763776000
+    m_Localized: "Solo no mueras. F\xE1cil, \xBFno?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3362763776001
+    m_Localized: "Lo est\xE1s haciendo bien. Estad\xEDsticamente, alguien peor que
+      t\xFA existe."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3362763776002
+    m_Localized: "Est\xE1s aprendiendo\u2026 lentamente. Pero est\xE1s."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3362763776003
+    m_Localized: "A veces, el camino m\xE1s obvio lleva directo al abismo."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3362763776004
+    m_Localized: "Fallar aqu\xED no duele. All\xE1 afuera, a veces s\xED."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3362763776005
+    m_Localized: "Este nivel fue hecho con cari\xF1o\u2026 y crueldad."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3362763776006
+    m_Localized: "\xBFQu\xE9 es el fracaso sino una lecci\xF3n mal interpretada?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3362763776007
+    m_Localized: "No est\xE1s solo. Tus errores est\xE1n contigo."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3362763776008
+    m_Localized: "La l\xF3gica aqu\xED es opcional. Buena suerte."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3362763776009
+    m_Localized: Tal vez pases a la primera. Tal vez el universo juegue con tu esperanza.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3362763776010
+    m_Localized: "Recordar\xE1s este nivel. Por buenas o malas razones."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3362763776011
+    m_Localized: "\xBFSigues leyendo estos mensajes? Valiente."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3362763776014
+    m_Localized: "Nadie te estar\xE1 esperando tras la puerta."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3362763776015
+    m_Localized: "\xBFA\xFAn persistes? Qu\xE9 admirable desperdicio de tiempo."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3362763776012
+    m_Localized: "\xBFPor qu\xE9 sigues intent\xE1ndolo? Rendirse no est\xE1 tan
+      mal."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3362763776013
+    m_Localized: "\xBFDe verdad crees que a alguien le importa?"
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []

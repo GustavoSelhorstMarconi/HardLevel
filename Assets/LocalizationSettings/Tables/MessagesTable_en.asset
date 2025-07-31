@@ -1,0 +1,92 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: MessagesTable_en
+  m_EditorClassIdentifier: 
+  m_LocaleId:
+    m_Code: en
+  m_SharedData: {fileID: 11400000, guid: 7db05f5cdaded5e46bd1e367493d530f, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 3362755387392
+    m_Localized: Missed? Blame the game. It always works.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3362763776000
+    m_Localized: "Just don\u2019t die. Easy, right?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3362763776001
+    m_Localized: "You\u2019re doing well. Statistically, someone worse exists."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3362763776002
+    m_Localized: "You\u2019re learning\u2026 slowly. But you are."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3362763776003
+    m_Localized: Sometimes, the obvious path leads straight into the abyss.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3362763776004
+    m_Localized: "Failing here doesn\u2019t hurt. Out there, it might."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3362763776005
+    m_Localized: "This level was made with love\u2026 and cruelty."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3362763776006
+    m_Localized: What is failure if not a misinterpreted lesson?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3362763776007
+    m_Localized: You are not alone. Your mistakes are with you.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3362763776008
+    m_Localized: Logic here is optional. Good luck.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3362763776009
+    m_Localized: "Maybe you\u2019ll pass first try. Maybe the universe is playing
+      with your hope."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3362763776010
+    m_Localized: "You\u2019ll remember this level. For better or worse."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3362763776011
+    m_Localized: Still reading these messages? Brave.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3362763776014
+    m_Localized: No one will be waiting for you after the door.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3362763776015
+    m_Localized: Still pushing forward? What an admirable waste of time.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3362763776012
+    m_Localized: "Why are you still trying? Giving up isn\u2019t that bad."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3362763776013
+    m_Localized: Do you really think anyone cares?
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []

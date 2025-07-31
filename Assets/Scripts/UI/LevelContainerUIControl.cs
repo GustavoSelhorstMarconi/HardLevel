@@ -12,10 +12,15 @@ public class LevelContainerUIControl : MonoBehaviour
     {
         levelTemplate.gameObject.SetActive(false);
         levelAmount = LevelControl.Instance.GetLevelAmount();
-
+        
         UpdateLevelsUI();
     }
-    
+
+    private void OnEnable()
+    {
+        UpdateLevelsUI();
+    }
+
     private void UpdateLevelsUI()
     {
         foreach (Transform child in transform)

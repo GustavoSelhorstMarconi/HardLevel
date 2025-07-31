@@ -1,0 +1,93 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: MessagesTable_pt
+  m_EditorClassIdentifier: 
+  m_LocaleId:
+    m_Code: pt
+  m_SharedData: {fileID: 11400000, guid: 7db05f5cdaded5e46bd1e367493d530f, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 3362755387392
+    m_Localized: Errou? Culpe o jogo. Sempre funciona.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3362763776000
+    m_Localized: "\xC9 s\xF3 n\xE3o morrer. F\xE1cil, n\xE9?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3362763776001
+    m_Localized: "Voc\xEA est\xE1 indo bem. Estatisticamente, algu\xE9m pior que
+      voc\xEA existe."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3362763776002
+    m_Localized: "Voc\xEA est\xE1 aprendendo\u2026 lentamente. Mas est\xE1."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3362763776003
+    m_Localized: "\xC0s vezes, o caminho mais \xF3bvio leva direto ao abismo."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3362763776004
+    m_Localized: "Errar aqui n\xE3o d\xF3i. L\xE1 fora, \xE0s vezes d\xF3i mais."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3362763776005
+    m_Localized: "Este n\xEDvel foi feito com carinho\u2026 e crueldade."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3362763776006
+    m_Localized: "O que \xE9 o fracasso, sen\xE3o uma aula mal interpretada?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3362763776007
+    m_Localized: "Voc\xEA n\xE3o est\xE1 sozinho. Tem seus erros com voc\xEA."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3362763776008
+    m_Localized: "A l\xF3gica aqui \xE9 opcional. Boa sorte."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3362763776009
+    m_Localized: "Talvez voc\xEA passe de primeira. Talvez o universo brinque com
+      sua esperan\xE7a."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3362763776010
+    m_Localized: "Voc\xEA vai se lembrar desse n\xEDvel. Por bons ou maus motivos."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3362763776011
+    m_Localized: "Voc\xEA ainda l\xEA essas mensagens? Corajoso."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3362763776014
+    m_Localized: "Ningu\xE9m vai estar te esperando depois da porta."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3362763776015
+    m_Localized: "Voc\xEA est\xE1 persistindo? Que desperd\xEDcio de tempo admir\xE1vel."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3362763776012
+    m_Localized: "Por que voc\xEA ainda tenta? Desistir n\xE3o \xE9 t\xE3o ruim."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3362763776013
+    m_Localized: "Voc\xEA acha que algu\xE9m realmente se importa?"
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []

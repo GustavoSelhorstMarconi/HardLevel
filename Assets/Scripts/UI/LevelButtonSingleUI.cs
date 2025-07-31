@@ -11,7 +11,11 @@ public class LevelButtonSingleUI : MonoBehaviour
 
     public void SetOnClick(int levelNumber)
     {
-        levelText.text = "Level "  + (levelNumber + 1);
+        string levelString = LocalizationControl.Instance.GetLocalizedText(LocalizationControl.LOCALIZATION_TABLE_NAME, LocalizationControl.LEVEL_KEY_NAME);
+        
+        levelText.text = levelString + (levelNumber + 1);
+        
+        levelButton.onClick.RemoveAllListeners();
         
         levelButton.onClick.AddListener(() =>
         {

@@ -10,6 +10,11 @@ public class LevelUIControl : MonoBehaviour
     private void Start()
     {
         LevelControl.Instance.OnLevelChange += LevelControlOnLevelChange;
+        
+        LocalizationControl.Instance.SetLocalizedText(levelText, LocalizationControl.LEVEL_KEY_NAME, false, (value) =>
+        {
+            levelText.text = LevelControl.Instance.GetLevelNameUI();
+        });
     }
 
     private void LevelControlOnLevelChange(object sender, EventArgs e)

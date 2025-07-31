@@ -5,6 +5,7 @@ public class DataSaveControl : MonoBehaviour
 {
     public const string DEATH_COUNT_KEY_NAME = "DeathCount";
     public const string LEVEL_UNLOCKED_KEY_NAME = "LevelUnlocked";
+    public const string LOCALE_KEY_NAME = "LocaleId";
     
     public static DataSaveControl Instance { get; set; }
     
