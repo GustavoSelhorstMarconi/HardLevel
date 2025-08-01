@@ -139,3 +139,10 @@ MonoBehaviour:
       m_SubObjectType: 
       m_SubObjectGUID: 
       m_EditorAssetChanged: 0
+  - levelName: Level 19
+    levelPrefab:
+      m_AssetGUID: 62f1de94dfd8d6f47878e076afd0b460
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_SubObjectGUID: 
+      m_EditorAssetChanged: 1

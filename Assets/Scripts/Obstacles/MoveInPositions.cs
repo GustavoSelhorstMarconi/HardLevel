@@ -111,7 +111,11 @@ public class MoveInPositions : MonoBehaviour
     {
         if (other.gameObject.TryGetComponent<PlayerControl>(out _))
         {
-            other.transform.SetParent(LevelControl.Instance.GetCurrentLevelTransform());
+            if (LevelControl.Instance != null)
+                other.transform.SetParent(LevelControl.Instance.GetCurrentLevelTransform());
+            else
+                other.transform.SetParent(null);
+            
             other.transform.GetComponent<PlayerMovementControl>().HandleExitPlatform();
         }
     }

@@ -92,6 +92,10 @@ MonoBehaviour:
     m_Localized: "O jogo n\xE3o est\xE1 te enganando. Voc\xEA se deixa enganar."
     m_Metadata:
       m_Items: []
+  - m_Id: 375630522163200
+    m_Localized: "H\xE1 armadilhas que n\xE3o se veem, apenas se sentem."
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

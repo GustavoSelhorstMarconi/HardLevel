@@ -1,5 +1,6 @@
 <linker>
   <assembly fullname="Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+    <type fullname="ChangeLevelColor" preserve="all" />
     <type fullname="FakeLevelEnd" preserve="all" />
     <type fullname="LevelEndControl" preserve="all" />
     <type fullname="LoseOnTouch" preserve="all" />

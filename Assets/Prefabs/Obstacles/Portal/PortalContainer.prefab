@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1717018059285636443}
   - component: {fileID: 920947695917774564}
   - component: {fileID: 8687838685678307701}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Portal1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -153,7 +153,7 @@ GameObject:
   - component: {fileID: 5823001028856360201}
   - component: {fileID: 7313459539845936624}
   - component: {fileID: 6122042603645762877}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Portal2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -291,7 +291,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3102285424395436898}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: PortalContainer
   m_TagString: Untagged
   m_Icon: {fileID: 0}

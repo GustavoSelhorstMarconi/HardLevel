@@ -92,6 +92,10 @@ MonoBehaviour:
     m_Localized: "El juego no te est\xE1 enga\xF1ando. Eres t\xFA quien se deja enga\xF1ar."
     m_Metadata:
       m_Items: []
+  - m_Id: 375630522163200
+    m_Localized: Hay trampas que no se ven, solo se sienten.
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

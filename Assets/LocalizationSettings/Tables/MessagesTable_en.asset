@@ -91,6 +91,10 @@ MonoBehaviour:
     m_Localized: "The game isn\u2019t tricking you. You let yourself be tricked."
     m_Metadata:
       m_Items: []
+  - m_Id: 375630522163200
+    m_Localized: "Some traps can\u2019t be seen \u2014 only felt."
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
